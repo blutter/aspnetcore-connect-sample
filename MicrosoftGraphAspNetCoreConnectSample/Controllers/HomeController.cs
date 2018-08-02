@@ -43,6 +43,7 @@ namespace MicrosoftGraphAspNetCoreConnectSample.Controllers
                 var graphClient = _graphSdkHelper.GetAuthenticatedClient(identifier);
 
                 ViewData["Response"] = await GraphService.GetUserJson(graphClient, email, HttpContext);
+                ViewData["GroupsResponse"] = await GraphService.GetGroupsJson(graphClient, email, HttpContext);
 
                 ViewData["Picture"] = await GraphService.GetPictureBase64(graphClient, email, HttpContext);
             }
